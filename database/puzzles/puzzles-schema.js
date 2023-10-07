@@ -2,8 +2,10 @@ import mongoose from "mongoose";
 
 const puzzlesSchema = mongoose.Schema(
   {
+    author: String,
+    title: String,
     guesses: Number,
-    words: [{ word: String, category: String, difficulty: Number }],
+    categories: [{ category: String, difficulty: Number, words: [String] }],
   },
   { collection: "puzzles" }
 );

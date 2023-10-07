@@ -1,5 +1,3 @@
-// import { examples } from "./sample-puzzles.js";
-// let puzzles = examples;
 import * as puzzlesDao from "../database/puzzles/puzzles-dao.js"
 
 const questionController = (app) => {
@@ -16,7 +14,6 @@ const createPuzzle = async (req, res) => {
 
 const findPuzzleByID = async (req, res) => {
   const puzzle = await puzzlesDao.findPuzzleByID(req.params.puzzleId);
-  console.log(puzzle)
   res.json(puzzle);
 };
 
